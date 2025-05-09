@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
 }
 
 .intro-content {
@@ -57,36 +56,37 @@ p {
   font: var(--text-sm);
   color: var(--gray-400);
   align-items: center;
-  margin-bottom: 80px;
 }
 
 #intro-languages {
   display: flex;
   gap: 16px;
   justify-content: center;
+  margin-top: 80px;
 
-  div {
-    width: 114px;
+  & > div {
     font: var(--text-md);
     border-radius: 50px;
     gap: 8px;
-    justify-content: space-around;
 
     img {
       width: 24px;
-      height: 24px;
+      aspect-ratio: 1/1;
     }
 
     span {
-      font: var(--text-md);
       color: var(--gray-500);
+      padding-left: 26px;
     }
-    
+
+    .js {
+      stroke: aqua;
+    }
+
     display: flex;
     padding: 8px 16px;
     align-items: center;
     background-color: var(--gray-300);
   }
-
-}
+ }
 
