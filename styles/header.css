@@ -6,8 +6,7 @@
 }
 
 .intro-content {
-  width: 680px;
-  margin: auto;
+  /*width: 680px;*/
   text-align: center;
 }
 
@@ -53,16 +52,17 @@ h1 {
 }
 
 p {
+  margin-top: 1.25em;
   font: var(--text-sm);
   color: var(--gray-400);
   align-items: center;
 }
 
-#intro-languages {
+.intro-languages {
   display: flex;
   gap: 16px;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 5em;
 
   & > div {
     font: var(--text-md);
