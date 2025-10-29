@@ -3,42 +3,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-image: url(/assets/Background_Intro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 750px;
 }
 
 .intro-content {
-  /*width: 680px;*/
+  width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-top: 7.5rem;
 }
 
 .intro-img {
-  position: relative;
+  position: relative;          /* cria um contexto para posicionar os filhos */
+  width: 97px;                 /* tamanho igual ao da borda */
+  height: 97px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 106px;
 }
 
-img {
-  position: absolute;
-  width: 87px;
+.intro-img .border {
+  position: absolute;          /* fica na base, como fundo */
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.intro-img img:not(.border):not(.vector) {
+  position: relative;          /* mantém a foto centralizada */
+  width: 87px;                 /* um pouco menor que a borda */
   aspect-ratio: 1/1;
   border-radius: 50%;
+  z-index: 2;                  /* fica acima da borda */
 }
 
-.border {
-  width: 97px;
-}
-
-.vector {
+.intro-img .vector {
+  position: absolute;
   width: 32px;
-  top: 20px;
-  left: 360px;
+  bottom: 0.1rem;              /* move para o canto inferior */
+  left: 4rem;
+  z-index: 3;                  /* acima de tudo */
 }
 
+
+.intro-text {
+  padding-top: 5rem;
+
+}
 h3 {
   font: var(--subtitle);
   color: var(--gray-500);
-  margin-bottom: 8px;
 }
 
 span {
@@ -48,7 +68,7 @@ span {
 h1 {
   font: var(--title-lg);
   color: var(--gray-600);
-  margin-bottom: 20px;
+  margin-top: .5rem;
 }
 
 p {
@@ -60,33 +80,35 @@ p {
 
 .intro-languages {
   display: flex;
-  gap: 16px;
   justify-content: center;
   margin-top: 5em;
+  flex-wrap: wrap;
 
   & > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    padding: 8px 16px;
+    background-color: var(--gray-300);
+
     font: var(--text-md);
     border-radius: 50px;
-    gap: 8px;
 
     img {
+      position: static;
       width: 24px;
       aspect-ratio: 1/1;
     }
 
     span {
       color: var(--gray-500);
-      padding-left: 26px;
+      gap: .5rem;
     }
 
     .js {
       stroke: aqua;
     }
-
-    display: flex;
-    padding: 8px 16px;
-    align-items: center;
-    background-color: var(--gray-300);
   }
  }
 
