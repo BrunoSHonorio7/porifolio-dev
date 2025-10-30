@@ -112,3 +112,19 @@ p {
   }
  }
 
+.intro-arrow {
+  display: flex;
+  justify-content: center;  
+  margin-top: 5rem;
+
+
+  & img {
+    width: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  & img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+  }
+}
